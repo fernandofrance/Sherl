@@ -1,6 +1,8 @@
 # Sherl
 A Discord based pentest/CTF toolkit.
 
+This is an open project, so, if you want to add some functionality, improve features or code performance in Sherl, the best way to get it to the main project is to create a fork and open pull request.
+
 ## Features
 
 * Port scanner
