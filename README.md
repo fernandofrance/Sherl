@@ -1,10 +1,5 @@
 # Sherl
-<br/>
-<p>
-  <a href="https://github.com/sirfern4ndo/sherl">
-    <img src="https://c.tenor.com/VFyzlhcQ7aMAAAAC/benedict-cumberbatch-a-wild-sherlock-appears.gif" alt="Logo">
-  </a>
-</p><br>
+
 A Discord-based pentest/CTF toolkit.
 <br><br>
 This is an open project, so, if you want to add some functionality, improve features or code performance in Sherl, the best way to get it to the main project is to create a fork and open pull request.
