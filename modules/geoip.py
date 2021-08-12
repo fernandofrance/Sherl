@@ -1,18 +1,21 @@
 import discord
-from discord.ext import commands
 import requests
+from discord.ext import commands
 
-class Geoip(commands.Cog):
+class GeoIP(commands.Cog):
     def __init__(self, client):
         self.client = client
     
     @commands.command()
     async def geoip(self, ctx, ip: str):
+
+        # Request to GEO-IP API
         url = f"http://ip-api.com/json/{ip}"
         res = requests.get(url)
         values = res.json()
+
+        # Results message
         results = discord.Embed(
-            title = "Geo IP",
             description = f"GEO IP request for {ip} returned: "
         )
         results.add_field(name="Country", value=values["country"])
@@ -31,4 +34,4 @@ class Geoip(commands.Cog):
 
 
 def setup(client):
-    client.add_cog(Geoip(client))
+    client.add_cog(GeoIP(client))

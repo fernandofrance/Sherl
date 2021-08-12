@@ -2,9 +2,18 @@ import os
 import discord
 from dotenv.main import load_dotenv
 from discord.ext import commands
+from discord.ext.commands.core import has_permissions
 
-client = commands.Bot(command_prefix=".")
+# Set client as global variable to refer to our bot
+# If you change the prefix, don't forget to change it in the "modules/Help.py" file too.
+client = commands.Bot(command_prefix=".", case_insensitive=True) 
 
+token = "" # Place your app token here.
+
+# Removes the default help command from discord.py lib
+client.remove_command("help")
+
+# Set a message on terminal when the bot gets online and set activity in Discord
 @client.event
 async def on_ready():
     print("==========")
@@ -28,18 +37,18 @@ print("[+] Modules loaded successfully.")
 
 # Command to reload modules
 @client.command()
+@has_permissions(administrator=True)
 async def reload(ctx):
     print("[+] Reloading modules...")
-    for filename in os.listdir('./modules'):
-        if filename.startswith('_'):
+    for filename in os.listdir("./modules"):
+        if filename.startswith("_"):
             continue
-        if filename.endswith('.py'):
-            client.reload_extension(f'modules.{filename[:-3]}')
-            print(f'-> {filename[:-3]} reloaded')
+        if filename.endswith(".py"):
+            client.reload_extension(f"modules.{filename[:-3]}")
+            print(f"-> {filename[:-3]} reloaded")
         else:
-            print(f'Unable to load {filename[:-3]}')
+            print(f"Unable to load {filename[:-3]}")
     print("[+] Modules reloaded successfully.")
     await ctx.send("`Modules reloaded successfully.`")
 
-load_dotenv() # Insert your token in the .env file or replace the function below with client.run("token")
-client.run(os.getenv("DISCORD_TOKEN")) # and remove the dotenv functions.
+client.run(token)

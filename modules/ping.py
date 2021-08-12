@@ -4,6 +4,7 @@ class Ping(commands.Cog):
     def __init__(self, client):
         self.client = client
 
+    # Checks the bot's latency.
     @commands.command()
     async def ping(self, ctx):
         await ctx.send(f"Latency: `{round(self.client.latency * 1000)}ms`")
