@@ -1,6 +1,5 @@
 import os
 import discord
-from dotenv.main import load_dotenv
 from discord.ext import commands
 from discord.ext.commands.core import has_permissions
 
