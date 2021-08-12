@@ -8,7 +8,7 @@ A Discord based pentest/CTF toolkit.
 * Web path finder
    * Performs a bruteforce attack for directories/files in webservers
 * GEO-IP
-   * Provides geolocalization of an address
+   * Provides geolocalization of an IP address
 * Encoder
    * Creates a hash from text (MD5, SHA1, SHA224, SHA256, SHA348, SHA512)
 
