@@ -20,7 +20,7 @@ This is an open project, so, if you want to add some functionality, improve feat
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/sirfern4ndo/sherl.git
+   git clone https://github.com/fernandofrance/sherl.git
    ```
 2. Install requirements
    ```sh
